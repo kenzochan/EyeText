@@ -22,7 +22,7 @@ class EyeText:
         
     def start(self):
         print("Aplicativo iniciado. Pressione Ctrl+Alt+q para capturar uma área da tela.")
-        keyboard.add_hotkey('ctrl+alt+q', self.start_selection)
+        keyboard.add_hotkey('ctrl+alt+shift+q', self.start_selection)
         
         try:
             while self.running:
@@ -32,7 +32,7 @@ class EyeText:
     
     def stop(self):
         self.running = False
-        if self.listener:
+        if self.listener: 
             self.listener.stop()
         print("Aplicativo encerrado.")
         sys.exit(0)
